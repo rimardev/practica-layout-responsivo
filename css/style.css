@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  grid-area: header; /*asigna nombre de Area a esta seccion*/
+  background-color: blueviolet;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+main {
+  grid-area: principal; /*asigna nombre de Area a esta seccion*/
+  background-color: #404040;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+footer {
+  grid-area: footer; /*asigna nombre de Area a esta seccion*/
+  background-color: rgb(94, 29, 155);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/*---------------------- Definicion del layout base para vista mobile*/
+div {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr; /*define cantidad y el Alto de las Filas*/
+  grid-template-areas: /*define la ubicacion de las Areas*/
+  "header"
+  "principal"
+  "footer";
+}
+
+/*--------------------------------- Define layout para vista desktop*/
+@media (min-width: 992px){
+  div {
+    grid-template-areas: /*Redefine la ubicacion de las Areas*/
+    "header principal"
+    "header principal"
+    "header footer";
+    grid-template-columns: 15% 1fr; /*define cantidad y el Ancho de las Columnas*/
+  }
+}
